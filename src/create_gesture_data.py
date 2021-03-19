@@ -109,7 +109,7 @@ while True:
             cv2.imshow("Thresholded Hand Image", thresholded)
             if num_imgs_taken <= 300:
                 #cv2.imwrite(r"D:\\gesture\\train\\"+str(element)+"\\" + str(num_imgs_taken+300) + '.jpg', thresholded)
-                cv2.imwrite(r"C:\Users\ahmedesoliman\Downloads\code\New folder\\x"+"\\" + str(num_imgs_taken) + '.jpg', thresholded)
+                cv2.imwrite(r"C:\Users\ahmedesoliman\Documents\GitHub\Sign_Lang_Ai_Py\src\train" + "\\" + str(num_imgs_taken) + '.jpg', thresholded)
             else:
                 break
             num_imgs_taken +=1
