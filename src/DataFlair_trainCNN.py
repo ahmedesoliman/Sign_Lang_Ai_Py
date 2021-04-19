@@ -12,11 +12,12 @@ import numpy as np
 import cv2
 from keras.callbacks import ReduceLROnPlateau
 from keras.callbacks import ModelCheckpoint, EarlyStopping
+
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
-train_path = r'D:\gesture\train'
-test_path = r'D:\gesture\test'
+train_path = r'C:\Users\ahmedesoliman\Documents\GitHub\Sign_Lang_Ai_Py\src\train'
+test_path = r'C:\Users\ahmedesoliman\Documents\GitHub\Sign_Lang_Ai_Py\src\test'
 
 train_batches = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input).flow_from_directory(directory=train_path, target_size=(64,64), class_mode='categorical', batch_size=10,shuffle=True)
 test_batches = ImageDataGenerator(preprocessing_function=tf.keras.applications.vgg16.preprocess_input).flow_from_directory(directory=test_path, target_size=(64,64), class_mode='categorical', batch_size=10, shuffle=True)
@@ -80,8 +81,8 @@ imgs, labels = next(train_batches) # For getting next batch of imgs...
 
 imgs, labels = next(test_batches) # For getting next batch of imgs...
 scores = model.evaluate(imgs, labels, verbose=0)
-print(f'{model.metrics_names[0]} of {scores[0]}; {model.metrics_names[1]} of {scores[1]*100}%')
-
+# print(f'{model.metrics_names[0]} of {scores[0]}; {model.metrics_names[1]} of {scores[1]*100}%')
+# print(f'{model.metrics_names[0]} of {scores[0]}; {model.metrics_names[1]} of {scores[1]*100}')
 
 #model.save('best_model_dataflair.h5')
 model.save('best_model_dataflair3.h5')
